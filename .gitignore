@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+.byebug_history
+.env
+public/targets.json
+.htpasswd

@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.byebug_history
+.env
+.env.docker
+public/targets.json
+nginx.conf
+.htpasswd

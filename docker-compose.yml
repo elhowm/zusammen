@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  app:
+    depends_on:
+      - redis
+    build: .
+    volumes:
+      - public_data:/app/public
+    env_file:
+      - .env.docker
+  redis:
+    image: redis:7.0-rc
+    ports:
+      - "6378:6379"
+    volumes:
+      - redis_data:/data
+  nginx:
+    image: nginx:1.21
+    ports:
+      - "9000:80"
+    volumes:
+      - public_data:/usr/share/nginx/html
+      - ./.htpasswd:/etc/nginx/.htpasswd
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+volumes:
+  redis_data:
+  public_data:
+    name: public

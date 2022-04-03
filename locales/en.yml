@@ -1,0 +1,10 @@
+en:
+  start:
+    hello: "Hello, %{name}"
+  unknown: Sorry, command is not clear
+  targets:
+    added: 'Success'
+    bulk_start: 'Enter targets to parse'
+    removed: 'Success'
+    list:
+      none: 'none'

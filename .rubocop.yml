@@ -1,0 +1,15 @@
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+# TODO: check status of https://github.com/rubocop/rubocop/issues/8506
+Lint/MissingSuper:
+  Enabled: false
