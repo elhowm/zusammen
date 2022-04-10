@@ -26,7 +26,9 @@ describe ::Handlers::Targets::List, type: :handler do
 
     it_behaves_like 'handler responds with message',
                     ::Handlers::Targets::List,
-                    "http://sample.com ports: 99; tag: sample.com\n"\
-                    'https://sample2.com ports: 8080; tag: none'
+                    "http://sample.com ports: 99; tag: sample.com; "\
+                    "success-0, fails-0, broken-false\n"\
+                    'https://sample2.com ports: 8080; tag: none; '\
+                    "success-0, fails-0, broken-false"
   end
 end

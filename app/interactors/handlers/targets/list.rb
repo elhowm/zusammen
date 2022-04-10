@@ -15,12 +15,16 @@ module Handlers
       end
 
       def targets_list
-        repo.targets.map do |target|
-          ports = target.ports.join(', ')
-          tag = target.tag || t('targets.list.none')
+        repo.targets.map { |target| item_info(target) }
+      end
 
-          "#{target.url} ports: #{ports}; tag: #{tag}"
-        end
+      def item_info(target)
+        ports = target.ports.join(', ')
+        tag = target.tag || t('targets.list.none')
+        status = target.status.map { |key, value| "#{key}-#{value}" }
+                       .join(', ')
+
+        "#{target.url} ports: #{ports}; tag: #{tag}; #{status}"
       end
     end
   end

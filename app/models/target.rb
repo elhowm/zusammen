@@ -38,8 +38,9 @@ class Target < BaseModel
 
   def status
     {
-      'status' => redis.get("#{url}_success").to_i,
-      'fails' => redis.get("#{url}_fails").to_i
+      'success' => redis.get("#{url}_success").to_i,
+      'fails' => redis.get("#{url}_fails").to_i,
+      'broken' => redis.get("#{url}_broken") || 'false'
     }
   end
 
