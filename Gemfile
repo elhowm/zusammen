@@ -9,7 +9,7 @@ gem 'pry', '~> 0.14.1'
 gem 'rake', '~> 13.0'
 
 gem 'interactor', '~> 3.0'
-gem 'telegram-bot-ruby', '~> 0.18'
+gem 'telegram-bot-ruby', '~> 0.18', require: 'telegram/bot'
 
 gem 'redis', '~> 4.6'
 
